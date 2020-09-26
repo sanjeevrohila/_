@@ -1,3 +1,5 @@
+#Finding minimum and maximum
+
 def sortMinMax(arr):
     min = arr[0]
     max = arr[0]
