@@ -8,10 +8,7 @@ def sortMinMax(arr):
         if ele > max:
             max = ele
 
-    return min,max
-
-        
-
+    return min, max
 
 if __name__ == "__main__":
     arr = [2,4,6,7,1,3,12,15]
