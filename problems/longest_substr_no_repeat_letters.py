@@ -1,32 +1,19 @@
-"""
-This finction finds out the string on non repeatative letters
-and return the length of longest  non repeatative letter string
-"""
-def longest_substr_no_repeat(string):
-    seen = []
-    substrings = []
-    longest_len = 0
+# A given string has letters, and
+# this code find a longest length substring
+# without repeat of letters
 
-    for i in range(len(string)):
-        this_str = ""
-        for j in range(i, len(string)):
-            if string[j] not in seen:
-                this_str += string[j]
-                seen.append(string[j])
-                if j == len(string) -1:
-                    substrings.append(this_str)
-                    seen = []
-                    if len(this_str) > longest_len:
-                        longest_len = len(this_str)
-                    break
+sample_str = "abcdabeudgzeui"
+def longest_substr(string):
+    l_s = ""
+    temp = ""
+    for ele in string:
+        if ele in temp:
+            print(f"Letter repeated {ele} and substr {temp}")
+            if len(temp) > len(l_s):
+                l_s = temp
             else:
-                substrings.append(this_str)
-                seen = []
-                if len(this_str) > longest_len:
-                    longest_len = len(this_str)
-                break
-    
-    print(substrings)
-    return longest_len
-
-print(longest_substr_no_repeat("abcdabeudgeui"))
+                temp = ""
+        else:
+            temp += ele
+    return l_s
+print(longest_substr(sample_str))
